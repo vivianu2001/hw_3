@@ -1,27 +1,5 @@
 #include <stdio.h>
 #define n 50
-int arr[n];
-
-void shift_element(int *arr, int i)
-{
-    int prev;
-    int curr;
-    if(i>=1)
-    {
-        int prev=*(arr+1);
-        *(arr+1)=*(arr);
-       
-         for(int j=2;j<=i+1;j++)
-          {
-             curr=*(arr+j);
-             *(arr+j)=prev;
-               prev=curr;
-          }
-       //*(arr+i+1)=prev;
-        
-    }
-}
-
 
 
 void shift_element2(int *arr, int i)
@@ -66,7 +44,8 @@ void insertion_sort(int *arr,int len)
 
 int main()
 {
-int num=0;
+   int arr[n];
+     int num=0;
  for(int i=0;i<n;i++)
  {
     scanf("%d",&num);
