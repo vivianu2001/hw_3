@@ -59,7 +59,7 @@ int main()
    
  }
  
-  printf("%d",*(arr+n-1));
+  printf("%d\n",*(arr+n-1));
  
 return 0;
 }
