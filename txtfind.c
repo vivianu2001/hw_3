@@ -6,8 +6,13 @@
 
 int getline1(char s[])
 {
+    
     memset(s,0,LINE+1);
-    fgets(s,LINE,stdin);
+    char *rt=fgets(s,LINE,stdin);
+    if(!rt)
+    {
+        return -1;
+    }
   
    return strlen(s);
     
@@ -135,17 +140,22 @@ int similar(char *s,char *t,int n)
 
 void print_lines(char * str)
 {
+    int ret=0;
+    int i=0;
+    
     char line[LINE+1];
     do
     {
-        getline1(line);
+        ret=getline1(line);
         if(substring(line,str))
         {
-            printf("%s\n",line);
+            printf(" line %d: %s",i,line);
+         i++;
+            
         }
         
     }
-    while(line[0]!=EOF);
+    while(ret!=-1);
     
 }
 
