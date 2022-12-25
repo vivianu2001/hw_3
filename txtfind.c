@@ -102,7 +102,7 @@ int similar(char *s,char *t,int n)
     memset(arr,0,WORD+1);
     
 
-    int i=0;
+    
     strcpy(arr,s);
     
   
@@ -141,7 +141,7 @@ int similar(char *s,char *t,int n)
 void print_lines(char * str)
 {
     int ret=0;
-    int i=0;
+   
     
     char line[LINE+1];
     do
@@ -149,8 +149,8 @@ void print_lines(char * str)
         ret=getline1(line);
         if(substring(line,str))
         {
-            printf(" line %d: %s",i,line);
-         i++;
+            printf("%s",line);
+        
             
         }
         
