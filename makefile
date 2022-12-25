@@ -15,5 +15,5 @@ txtfind: txtfind.o
 
 all: isort txtfind
 
-clean:  
-  rm -f *.o isort txtfind
+clean:
+	rm -f *.o isort txtfind
