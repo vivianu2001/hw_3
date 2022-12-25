@@ -6,7 +6,7 @@
 
 int getline1(char s[])
 {
-    memset(s,0,LINE);
+    memset(s,0,LINE+1);
     fgets(s,LINE,stdin);
   
    return strlen(s);
@@ -16,7 +16,7 @@ int getline1(char s[])
 int getword(char w[])
 {
     
-    memset(w,0,WORD);
+    memset(w,0,WORD+1);
     scanf("%s",w);
     
     return strlen(w);
