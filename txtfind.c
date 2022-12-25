@@ -76,3 +76,83 @@ char *temp2;
     }
         
 }
+
+
+int similar(char *s,char *t,int n)
+{
+    if(n==0&&(strlen(s)==strlen(t)))
+    {
+       return substring(s,t);
+    }
+ 
+  
+
+    if(strlen(s)<strlen(t))
+    {
+      return 0;
+    }
+
+
+    char arr[30];
+    for(int i=0;i<30;i++)
+    {
+        arr[i]=0;
+    }
+
+
+    int i=0;
+
+    while(*s!='\n'||*s!='\t'||*s!=' ')
+    {
+        arr[i]= *s;
+        s++;
+        i++;
+    }
+
+
+    int j=0;
+    char *temp=arr;
+
+    while ((*t!='\n'||*t!='\t'||*t!=' ')&&(*temp!='\n'||*temp!='\t'||*temp!=' '))
+    {
+        if(*t==*temp)
+        {
+            arr[j]=0;
+            j++;
+            temp++;
+            t++;
+    
+        }
+        else
+        {
+            temp++;
+        }
+
+    }
+        int count=0;
+        for(int p=0;p<30;p++)
+        {
+            if(arr[p]!=0)
+            {
+
+                count++;
+
+
+            }
+        }
+    
+   
+   if(count==n)
+   {
+    return 1;
+   }
+   else
+   {
+    return 0;
+   }
+    
+}
+
+
+
+
