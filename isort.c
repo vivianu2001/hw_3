@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define n 50
+#define N 50
 void shift_element2(int*,int);
 
 void shift_element2(int *arr, int i)
@@ -44,22 +44,22 @@ void insertion_sort(int *arr,int len)
 
 int main()
 {
-   int arr[n];
+   int arr[N];
      int num=0;
- for(int i=0;i<n;i++)
+ for(int i=0;i<N;i++)
  {
     scanf("%d",&num);
     *(arr+i)=num;
  }
- insertion_sort(arr,n);
+ insertion_sort(arr,N);
  
- for(int i=0;i<n-1;i++)
+ for(int i=0;i<N-1;i++)
  {
     printf("%d,",*(arr+i));
    
  }
  
-  printf("%d\n",*(arr+n-1));
+  printf("%d\n",*(arr+N-1));
  
 return 0;
 }
