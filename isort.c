@@ -4,7 +4,7 @@ void shift_element2(int*,int);
 
 void shift_element2(int *arr, int i)
 {
-    if(i=1)
+    if(i==1)
     {
         *(arr+1)=*(arr);
         i=0;
