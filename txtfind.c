@@ -171,7 +171,7 @@ void print_lines(char * str)
         char * word = strtok(line, " ");
       
        while( word != NULL ) {
-          if(similar(word,str,1))
+          if( !strcmp(word,str)||similar(word,str,1))
           {
               printf("%s\n",word);
           }
