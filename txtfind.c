@@ -133,4 +133,32 @@ int similar(char *s,char *t,int n)
 }
 
 
+void print_lines(char * str)
+{
+    char line[LINE+1];
+    do
+    {
+        getline1(line);
+        if(substring(line,str))
+        {
+            printf("%s\n",line);
+        }
+        
+    }
+    while(line[0]!='5');
+    
+}
+
+int main()
+{
+    print_lines("cat");
+    
+    return 0;
+}
+    
+    
+    
+    
+
+
 
