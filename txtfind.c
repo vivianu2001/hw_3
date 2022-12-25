@@ -82,7 +82,7 @@ int similar(char *s,char *t,int n)
 {
     if(n==0&&(strlen(s)==strlen(t)))
     {
-       return substring(s,t);
+       return !strcmp(s,t);
     }
  
   
@@ -93,32 +93,21 @@ int similar(char *s,char *t,int n)
     }
 
 
-    char arr[30];
-    for(int i=0;i<30;i++)
-    {
-        arr[i]=0;
-    }
-
+    char arr[WORD+1];
+    memset(arr,0,WORD+1);
+    
 
     int i=0;
-
-    while(*s!='\n'||*s!='\t'||*s!=' ')
-    {
-        arr[i]= *s;
-        s++;
-        i++;
-    }
-
-
-    int j=0;
+    strcpy(arr,s);
+    
+  
     char *temp=arr;
 
-    while ((*t!='\n'||*t!='\t'||*t!=' ')&&(*temp!='\n'||*temp!='\t'||*temp!=' '))
+    while (*t!=0&& *temp!=0)
     {
         if(*t==*temp)
         {
-            arr[j]=0;
-            j++;
+            *temp=2;
             temp++;
             t++;
     
@@ -130,29 +119,18 @@ int similar(char *s,char *t,int n)
 
     }
         int count=0;
-        for(int p=0;p<30;p++)
+        for(int p=0;p<strlen(s);p++)
         {
-            if(arr[p]!=0)
+            if(arr[p]!=2)
             {
 
                 count++;
-
-
             }
         }
     
    
-   if(count==n)
-   {
-    return 1;
-   }
-   else
-   {
-    return 0;
-   }
-    
+ return (count==n);
 }
-
 
 
 
