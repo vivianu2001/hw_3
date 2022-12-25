@@ -1,5 +1,5 @@
 CC = gcc
-FLAGS= -Wall
+FLAGS= -Wall -g
 
 txtfind.o: txtfind.c 											
 	$(CC) -c $(FLAGS) txtfind.c 
