@@ -13,7 +13,7 @@ int getline1(char s[])
     {
         return -1;
     }
-  
+  s[strlen(s)-1]=0;
    return strlen(s);
     
 }
