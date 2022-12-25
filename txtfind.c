@@ -173,7 +173,7 @@ void print_lines(char * str)
        while( word != NULL ) {
           if(similar(word,str,1))
           {
-              printf("%s\n",word)
+              printf("%s\n",word);
           }
           
          word = strtok(NULL, " ");
