@@ -159,6 +159,36 @@ void print_lines(char * str)
     
 }
 
+ void print_similar_words(char *str)
+ {
+
+    int ret=0;
+   
+    char line[LINE+1];
+    do
+    {
+        ret=getline1(line);
+        char * word = strtok(line, " ");
+      
+       while( word != NULL ) {
+          if(similar(word,str,1))
+          {
+              printf("%s\n",word)
+          }
+          
+         word = strtok(NULL, " ");
+       }
+       
+        
+    }
+    while(ret!=-1);
+    
+ }
+
+
+
+
+
 int main()
 {
     
@@ -170,6 +200,10 @@ int main()
         print_lines(command);
     }
    
+    if(t=='b')
+    {
+        print_similar_words(command);
+    }
      
     return 0;
 }
