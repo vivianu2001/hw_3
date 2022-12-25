@@ -145,14 +145,22 @@ void print_lines(char * str)
         }
         
     }
-    while(line[0]!='5');
+    while(line[0]!=EOF);
     
 }
 
 int main()
 {
-    print_lines("cat");
     
+    char command[WORD+1];
+    char t='e';
+    scanf("%s %c",command,&t);
+    if(t=='a')
+    { 
+        print_lines(command);
+    }
+   
+     
     return 0;
 }
     
