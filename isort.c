@@ -1,47 +1,63 @@
 #include <stdio.h>
 #define N 50
-void shift_element2(int*,int);
+void shift_element(int*,int);
 
-void shift_element2(int *arr, int i)
-{
-    if(i==1)
-    {
-        *(arr+1)=*(arr);
-        i=0;
-    }
-    
-    
-    int prev=*(arr);
-    int curr=0;
-    if(i>=1)
-    {
-        while(i>=-1)
-        {
-            curr=*(arr);
-           *(arr)=prev;
-             arr++;
-             prev=curr;
-             i--;
-    }
-}
+void shift_element(int *arr, int *i) {
+	int ival;
+	for(ival = *i; i > arr && *(i-1) > ival; i--) {
+		*i = *(i-1);
+	}
+	*i = ival;
 }
 
-void insertion_sort(int *arr,int len)
-{
-   for(int i=1;i<len;i++)
-   {
-       int temp= *(arr+i);
-       int j= i-1;
-       
-       while((temp < *(arr+j))&& j>=0 )
-       {
-           *(arr+j+1)= *(arr+j);
-           j--;
-       }
-       *(arr+j+1)=temp;
-       
-   }
+void insertion_sort(int *arr, int len) {
+	int *i, *last = arr + len;
+	for(i = arr + 1; i < last; i++)
+		if(*i < *(i-1))
+			shift_element(arr, i);
 }
+
+
+// void shift_element2(int *arr, int i)
+// {
+//     if(i==1)
+//     {
+//         *(arr+1)=*(arr);
+//         i=0;
+//     }
+    
+    
+//     int prev=*(arr);
+//     int curr=0;
+//     if(i>=1)
+//     {
+//         while(i>=-1)
+//         {
+//             curr=*(arr);
+//            *(arr)=prev;
+//              arr++;
+//              prev=curr;
+//              i--;
+//     }
+// }
+// }
+
+// void insertion_sort(int *arr,int len)
+// {
+//    for(int i=1;i<len;i++)
+//    {
+//        int temp= *(arr+i);
+//        int j= i-1;
+       
+//        while((temp < *(arr+j))&& j>=0 )
+//        {
+//            *(arr+j+1)= *(arr+j);
+//            j--;
+//        }
+//        *(arr+j+1)=temp;
+       
+//    }
+
 
 int main()
 {
