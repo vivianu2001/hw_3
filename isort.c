@@ -32,6 +32,7 @@ void insertion_sort(int *arr,int len)
    {
        int temp= *(arr+i);
        int j= i-1;
+       int temp2 = *(arr+j);
        
        while((temp < *(arr+j))&& j>=0 )
        {
