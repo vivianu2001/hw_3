@@ -12,7 +12,7 @@ void shift_element2(int *arr, int i)
     
     
     int prev=*(arr);
-    int curr;
+    int curr=0;
     if(i>=1)
     {
         while(i>=-1)
@@ -51,7 +51,7 @@ int main()
     scanf("%d",&num);
     *(arr+i)=num;
  }
- insertion_sort(arr,50);
+ insertion_sort(arr,n);
  
  for(int i=0;i<n-1;i++)
  {
