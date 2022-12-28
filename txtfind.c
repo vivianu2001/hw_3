@@ -149,7 +149,8 @@ void print_lines(char * str)
         ret=getline1(line);
         if(substring(line,str))
         {
-            printf("%s",line);
+            ///fixed ??
+            printf("%s\n",line);
         
             
         }
